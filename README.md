@@ -1,6 +1,9 @@
 # VDO
 
 The lightweight JSX compatible templating engine.
+Perfect for creating html strings server side or in browser.
+
+Check out [diffhtml](https://github.com/tbranyen/diffhtml) for React style diffing.
 
 # Why
 JSX is powerful compared to other templating engines but it has some warts.
