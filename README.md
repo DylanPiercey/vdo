@@ -64,7 +64,7 @@ vdo.isElement(<div/>); // true
 // This allows for mixes of safe and unsafe html in the same node.
 const myHTMLStr = "<br/>";
 const vNode = <div>{ vdo.safe(myHTMLStr) }</div>;
-Strong(vNode); //-> <div><br/></div>
+String(vNode); //-> <div><br/></div>
 ```
 
 + **with(context, renderer)** : Gives all components inside a render function some external `context`.
