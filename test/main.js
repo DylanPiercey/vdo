@@ -68,10 +68,9 @@ describe("Node", function () {
 		assert.equal(node.type, "div");
 		assert.equal(String(node), "<div>&lt;span&gt;&lt;/span&gt;</div>");
 	});
-	it("should set innerHTML", function () {
-		var node = vdo("div", { innerHTML: "<span></span>" });
+	it("should set safe html", function () {
+		var node = vdo("div", null, vdo.safe("<span></span>"));
 		assert.equal(node.type, "div");
-		assert.equal(node.innerHTML, "<span></span>");
 		assert.equal(String(node), "<div><span></span></div>");
 	});
 });

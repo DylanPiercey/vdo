@@ -18,6 +18,7 @@ It has some abstractions that simply don't make sense for creating html (ala cla
 * Allows any custom attribute (react only allows data-).
 * Render nested arrays.
 * Optimized for rendering html.
+* Escaped values by default.
 * JSX compatible.
 
 # Installation
@@ -53,6 +54,17 @@ document.body.innerHTML = html;
 
 ```javascript
 vdo.isElement(<div/>); // true
+```
+
++ **safe(html)** : Marks html as safe as a VDO child node.
+
+
+```javascript
+// Use safe instead of "innerHTML" when coming from react.
+// This allows for mixes of safe and unsafe html in the same node.
+const myHTMLStr = "<br/>";
+const vNode = <div>{ vdo.safe(myHTMLStr) }</div>;
+Strong(vNode); //-> <div><br/></div>
 ```
 
 + **with(context, renderer)** : Gives all components inside a render function some external `context`.
