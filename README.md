@@ -27,11 +27,6 @@ It has some abstractions that simply don't make sense for creating html (ala cla
 npm install vdo
 ```
 
-#### Bower
-```console
-bower install vdo
-```
-
 # Example
 
 ```javascript

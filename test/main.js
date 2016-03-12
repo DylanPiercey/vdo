@@ -31,7 +31,7 @@ describe("Function", function () {
 			'<div><h1><span class="child-0">0</span><span class="child-1">1</span><span class="child-2">2</span><span class="child-3">3</span><span class="child-4">4</span><span class="child-5">5</span></h1></div>'
 		);
 	});
-	return it("should be able to set a context", function () {
+	it("should be able to set a context", function () {
 		assert.equal(vdo["with"](1, function () {
 			return vdo(MyComponent);
 		}), "<div>1</div>");
@@ -55,11 +55,23 @@ describe("Node", function () {
 		var node = vdo("div", null, 1, 2, 3);
 		assert.equal(node.type, "div");
 		assert.equal(Object.keys(node.children).length, 3);
+		assert.equal(String(node), "<div>123</div>");
 	});
-	return it("should set innerHTML", function () {
+	it("should add child nodes", function () {
+		var node = vdo("div", null, vdo("span"), vdo("span"), vdo("span"));
+		assert.equal(node.type, "div");
+		assert.equal(Object.keys(node.children).length, 3);
+		assert.equal(String(node), "<div><span></span><span></span><span></span></div>");
+	});
+	it("should escape child strings", function () {
+		var node = vdo("div", null, "<span></span>");
+		assert.equal(node.type, "div");
+		assert.equal(String(node), "<div>&lt;span&gt;&lt;/span&gt;</div>");
+	});
+	it("should set innerHTML", function () {
 		var node = vdo("div", { innerHTML: "<span></span>" });
 		assert.equal(node.type, "div");
-		assert.equal(node.children, "<span></span>");
+		assert.equal(node.innerHTML, "<span></span>");
 		assert.equal(String(node), "<div><span></span></div>");
 	});
 });
