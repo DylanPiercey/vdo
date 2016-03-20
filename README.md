@@ -56,14 +56,14 @@ document.body.innerHTML = html;
 vdo.isElement(<div/>); // true
 ```
 
-+ **safe(html)** : Marks html as safe as a VDO child node.
++ **markSafe(html)** : Marks html as safe as a VDO child node.
 
 
 ```javascript
-// Use safe instead of "innerHTML" when coming from react.
+// Use #markSafe instead of "innerHTML" when coming from react.
 // This allows for mixes of safe and unsafe html in the same node.
 const myHTMLStr = "<br/>";
-const vNode = <div>{ vdo.safe(myHTMLStr) }</div>;
+const vNode = <div>{ vdo.markSafe(myHTMLStr) }</div>;
 String(vNode); //-> <div><br/></div>
 ```
 

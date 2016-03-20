@@ -47,9 +47,10 @@ describe("Node", function () {
 		assert.equal(vdo("div").type, "div");
 	});
 	it("should be able to set attributes", function () {
-		var node = vdo("div", { test: true });
+		var node = vdo("div", { a: undefined, b: null, c: false, d: true, e: 1, f: "hi" });
 		assert.equal(node.type, "div");
-		assert.deepEqual(node.attrs, { test: true });
+		assert.deepEqual(node.attrs, { a: undefined, b: null, c: false, d: true, e: 1, f: "hi" });
+		assert.equal(node.toString(), '<div d e="1" f="hi"></div>');
 	});
 	it("should add children", function () {
 		var node = vdo("div", null, 1, 2, 3);
@@ -69,7 +70,7 @@ describe("Node", function () {
 		assert.equal(String(node), "<div>&lt;span&gt;&lt;/span&gt;</div>");
 	});
 	it("should set safe html", function () {
-		var node = vdo("div", null, vdo.safe("<span></span>"));
+		var node = vdo("div", null, vdo.markSafe("<span></span>"));
 		assert.equal(node.type, "div");
 		assert.equal(String(node), "<div><span></span></div>");
 	});
