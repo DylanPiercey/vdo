@@ -69,6 +69,11 @@ describe("Node", function () {
 		assert.equal(node.type, "div");
 		assert.equal(String(node), "<div>&lt;span&gt;&lt;/span&gt;</div>");
 	});
+	it("should ignore null and false children", function () {
+		var node = vdo("div", null, [null, false, "hello"]);
+		assert.equal(node.type, "div");
+		assert.equal(String(node), "<div>hello</div>");
+	});
 	it("should set safe html", function () {
 		var node = vdo("div", null, vdo.markSafe("<span></span>"));
 		assert.equal(node.type, "div");

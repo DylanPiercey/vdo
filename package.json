@@ -1,6 +1,6 @@
 {
   "name": "vdo",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "description": "Minimal JSX compatible html focused templating engine.",
   "author": "Dylan Piercey <pierceydylan@gmail.com>",
   "main": "lib/index.js",
