@@ -52,6 +52,11 @@ describe("Node", function () {
 		assert.deepEqual(node.attrs, { a: undefined, b: null, c: false, d: true, e: 1, f: "hi" });
 		assert.equal(node.toString(), '<div d e="1" f="hi"></div>');
 	});
+	it("should set empty object when no attributes specified", function () {
+		var node = vdo("div", null);
+		assert.deepEqual(node.attrs, {});
+		assert.equal(node.toString(), '<div></div>');
+	});
 	it("should add children", function () {
 		var node = vdo("div", null, 1, 2, 3);
 		assert.equal(node.type, "div");
