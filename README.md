@@ -1,9 +1,12 @@
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+![npm](https://img.shields.io/npm/dm/vdo.svg)
+
 # VDO
 
 The lightweight JSX compatible templating engine.
 Perfect for creating html strings server side or in browser.
 
-Check out [diffhtml](https://github.com/tbranyen/diffhtml) for React style diffing.
+Check out [diffhtml](https://github.com/tbranyen/diffhtml) or [morphdom](https://github.com/patrick-steele-idem/morphdom) for React style diffing.
 
 # Why
 JSX is powerful compared to other templating engines but it has some warts.
@@ -102,6 +105,6 @@ vNode.toString(); // '<div editable="true">Hello World</div>';
 
 ### Contributions
 
-* Use gulp to run tests.
+* Use `npm test` to run tests.
 
 Please feel free to create a PR!
