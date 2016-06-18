@@ -10,7 +10,7 @@ describe('Function', function () {
     var ChildComponent, MyComponent
     ChildComponent = function (props, children) {
       return vdo('h1', null, children.map(function (child, i) {
-        child.attrs = {
+        child.attributes = {
           'class': 'child-' + i
         }
         return child
@@ -44,44 +44,44 @@ describe('Function', function () {
 
 describe('Node', function () {
   it('should be able to create', function () {
-    assert.equal(vdo('div').type, 'div')
+    assert.equal(vdo('div').nodeName, 'div')
   })
   it('should be able to set attributes', function () {
     var node = vdo('div', { a: undefined, b: null, c: false, d: true, e: 1, f: 'hi' })
-    assert.equal(node.type, 'div')
-    assert.deepEqual(node.attrs, { a: undefined, b: null, c: false, d: true, e: 1, f: 'hi' })
+    assert.equal(node.nodeName, 'div')
+    assert.deepEqual(node.attributes, { a: undefined, b: null, c: false, d: true, e: 1, f: 'hi' })
     assert.equal(node.toString(), '<div d e="1" f="hi"></div>')
   })
   it('should set empty object when no attributes specified', function () {
     var node = vdo('div', null)
-    assert.deepEqual(node.attrs, {})
+    assert.deepEqual(node.attributes, {})
     assert.equal(node.toString(), '<div></div>')
   })
   it('should add children', function () {
     var node = vdo('div', null, 1, 2, 3)
-    assert.equal(node.type, 'div')
-    assert.equal(Object.keys(node.children).length, 3)
+    assert.equal(node.nodeName, 'div')
+    assert.equal(Object.keys(node.childNodes).length, 3)
     assert.equal(String(node), '<div>123</div>')
   })
   it('should add child nodes', function () {
     var node = vdo('div', null, vdo('span'), vdo('span'), vdo('span'))
-    assert.equal(node.type, 'div')
-    assert.equal(Object.keys(node.children).length, 3)
+    assert.equal(node.nodeName, 'div')
+    assert.equal(Object.keys(node.childNodes).length, 3)
     assert.equal(String(node), '<div><span></span><span></span><span></span></div>')
   })
   it('should escape child strings', function () {
     var node = vdo('div', null, '<span></span>')
-    assert.equal(node.type, 'div')
+    assert.equal(node.nodeName, 'div')
     assert.equal(String(node), '<div>&lt;span&gt;&lt;/span&gt;</div>')
   })
   it('should ignore null and false children', function () {
     var node = vdo('div', null, [null, false, 'hello'])
-    assert.equal(node.type, 'div')
+    assert.equal(node.nodeName, 'div')
     assert.equal(String(node), '<div>hello</div>')
   })
   it('should set safe html', function () {
     var node = vdo('div', null, vdo.markSafe('<span></span>'))
-    assert.equal(node.type, 'div')
+    assert.equal(node.nodeName, 'div')
     assert.equal(String(node), '<div><span></span></div>')
   })
 })

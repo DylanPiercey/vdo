@@ -6,7 +6,7 @@
 The lightweight JSX compatible templating engine.
 Perfect for creating html strings server side or in browser.
 
-Check out [diffhtml](https://github.com/tbranyen/diffhtml) or [morphdom](https://github.com/patrick-steele-idem/morphdom) for React style diffing.
+Check out [set-dom](https://github.com/DylanPiercey/set-dom), [diffhtml](https://github.com/tbranyen/diffhtml) or [morphdom](https://github.com/patrick-steele-idem/morphdom) for React style diffing.
 
 # Why
 JSX is powerful compared to other templating engines but it has some warts.
