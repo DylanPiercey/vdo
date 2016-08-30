@@ -1,7 +1,8 @@
-## Directory-based project format
+## SUBLIME
 *.sublime*
 
 # OSX
 *.DS_Store
 
+# NPM
 node_modules
