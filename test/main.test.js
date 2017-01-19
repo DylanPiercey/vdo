@@ -9,6 +9,7 @@ describe('Function', function () {
   it('should be able to create', function () {
     var ChildComponent, MyComponent
     ChildComponent = function (props, children) {
+      assert.deepEqual(props.children, children)
       return vdo('h1', null, children.map(function (child, i) {
         child.attributes = {
           'class': 'child-' + i

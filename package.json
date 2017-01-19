@@ -1,7 +1,7 @@
 {
   "name": "vdo",
   "description": "Minimal JSX compatible html focused templating engine.",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "author": "Dylan Piercey <pierceydylan@gmail.com>",
   "bugs": "https://github.com/DylanPiercey/vdo/issues",
   "dependencies": {
@@ -9,9 +9,9 @@
     "flatten": "^1.0.2"
   },
   "devDependencies": {
-    "mocha": "^3.0.2",
-    "snazzy": "^4.0.1",
-    "standard": "^8.0.0"
+    "mocha": "^3.2.0",
+    "snazzy": "^6.0.0",
+    "standard": "^8.6.0"
   },
   "homepage": "https://github.com/DylanPiercey/vdo",
   "keywords": [
