@@ -35,7 +35,7 @@ describe('Function', function () {
   it('should be able to set a context', function () {
     assert.equal(vdo['with'](1, function () {
       return vdo(MyComponent)
-    }), '<div>1</div>')
+    }).toString(), '<div>1</div>')
 
     function MyComponent (props, children, context) {
       return vdo('div', null, context)
